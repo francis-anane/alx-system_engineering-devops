@@ -1,4 +1,5 @@
 #!/bin/bash
-readlink -f ./
+readlink -f 0x00-shell_basics
+
 
 
