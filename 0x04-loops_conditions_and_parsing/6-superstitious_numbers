@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# This script displays numbers from 1 to 20 and "bad luck from" China if number
+# is 4, Japan if 9,  and Italy if 17 accordingly
+
+n=1
+while ((n <= 20));
+do
+    echo $n
+    case $n in
+	4) echo bad luck from China
+	   ;;
+	9) echo bad luck from Japan
+	   ;;
+	17) echo bad luck from Italy
+	    ;;
+	esac
+    n=$((n + 1));
+done

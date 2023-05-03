@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# This script displays the content of the current directory
+# in a list format by starting after the first "-" in the file name
+
+list=$(ls -1)
+list=$(echo "$list" | cut -d "-" -f 1 --complement)
+for i in $list;
+do
+    echo "$i"
+done

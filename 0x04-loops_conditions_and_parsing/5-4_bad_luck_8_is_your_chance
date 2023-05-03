@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# This script is displaying "Best School", "bad luck", "good luck" in
+# 10 times loop, if in the fourth loop
+# display bad luck, and good luck in the seventh loop
+
+n=0
+while ((n < 10));
+do
+    if ((n == 3));
+    then
+	echo bad luck;
+    elif ((n == 7));
+    then
+	echo good luck
+    else
+	echo Best School
+	fi
+    n=$((n + 1));
+done
