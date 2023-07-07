@@ -2,13 +2,13 @@
 # Installs and setup haproxy for load balancing
 
 apt-get install -y software-properties-common
-add-apt-repository -y ppa:vbernat/haproxy-1.8
+add-apt-repository -y ppa:vbernat/haproxy-2.0
 apt-get -y update
-apt-get install -y haproxy=1.8.\*
+apt-get install -y haproxy=2.0.\*
 
 echo "ENABLED=1" > /etc/default/haproxy
 
-# Listen to web1 and web2 servers                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+# Listen to web1 and web2 servers
 echo "
    listen load_balancer
    bind *:80
