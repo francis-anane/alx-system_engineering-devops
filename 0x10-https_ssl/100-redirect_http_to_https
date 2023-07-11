@@ -37,13 +37,13 @@ defaults
 
 # Begining of my config
 frontend abstrat22_frontend
-        bind     *:80
+        bind *:80
         redirect scheme https code 301 if !{ ssl_fc }
         http-request set-header X-Forwarded-Proto http
         default_backend  abstrat22_backend
 
 frontend abstrat22_ssl_frontend
-        bind *:443 ssl crt etc/letsencrypt/keys/0000_key-certbot.pem
+        bind *:443 ssl crt /etc/haproxy/certs/abstrat22.tech.pem
         http-request set-header X-Forwarded-Proto https
         default_backend abstrat22_backend
 
@@ -51,4 +51,4 @@ backend abstrat22_backend
         balance roundrobin
         server 97930-web-01 54.144.150.155:80 check
         server 97930-web-02 3.89.155.218:80 check
-# end of my config                    
+# end of my config
