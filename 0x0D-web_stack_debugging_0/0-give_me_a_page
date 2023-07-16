@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 # This script runs apache on designated container
 
-sudo echo "ServerName localhost" >> /etc/apache2.conf
-sudo service apache2 start
+echo "ServerName localhost" >> /etc/apache2.conf
+service apache2 start
