@@ -1,1 +1,1 @@
-# My work on school project, 0x14-mysql
+# My work on school project 0x14-mysql
