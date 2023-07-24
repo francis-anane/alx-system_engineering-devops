@@ -26,4 +26,4 @@ if __name__ == "__main__":
     len(completed_task)}/{len(user_todo)}):""")
 
     for task_title in completed_task:
-        print(f"\t{task_title}")
+        print(f"\t {task_title}")
