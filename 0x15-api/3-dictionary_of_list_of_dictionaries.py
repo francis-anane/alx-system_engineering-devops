@@ -18,10 +18,9 @@ if __name__ == "__main__":
 
     with open("todo_all_employees.json", "w") as a_file:
         # dump the data with dictionary and list comprehension
-        json.dump({
-            user.get("id"): [{"task": todo.get("title"), "completed":
-                              todo.get("completed"),
-                              "username": user.get("username")
-                              } for todo in requests.get(f"{api_url}todos",
-                                                         params={"userId": user.get("id")}).json()]
-            for user in users}, a_file)
+        json.dump({user.get("id"): [
+            {"task": todo.get("title"), "completed": todo.get("completed"),
+             "username": user.get("username")}
+            for todo in requests.get(f"{api_url}todos",
+                                     params={"userId": user.get("id")})
+            .json()] for user in users}, a_file)
