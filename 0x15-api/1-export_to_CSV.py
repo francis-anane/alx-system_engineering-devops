@@ -10,6 +10,7 @@ import sys
 
 if __name__ == "__main__":
 
+    # api server
     api_url = "https://jsonplaceholder.typicode.com/"
 
     # Get user by id through the api service in a json format
@@ -18,8 +19,9 @@ if __name__ == "__main__":
     user_todo = requests.get(f"{api_url}todos",
                              params={"userId": sys.argv[1]}).json()
 
-    name = user_id.get('name')
+    name = user_id.get('username')
     tasks = []
+
     with open(f"{sys.argv[1]}.csv", "w", newline="") as csvfile:
         writer = csv.writer(csvfile, quoting=csv.QUOTE_ALL)
         for task in user_todo:
