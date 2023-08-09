@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-""" Module defines number_of_subscribers """
+""" Module defines top_ten """
 
 
 import requests
