@@ -1,3 +1,10 @@
+
+
+
+
+
+
+  GNU nano 4.8                                                      /etc/systemd/system/gunicorn.service                                                                
 # Create a service for web-01, to be used by gunicorn
 [Unit]
 Description="Gunicorn instance to serve web-01"
@@ -8,18 +15,10 @@ User=ubuntu
 Group=www-data
 WorkingDirectory=/home/ubuntu/AirBnB_clone_v4
 Environment="PATH=/usr/bin/python3"
-ExecStart=/home/ubuntu/.local/bin/gunicorn  --workers 3 --bind 0.0.0.0:5003 -m 007 web_dynamic.2-hbnb:app >> /tmp/airbnb-access.log 2> /tmp/airbnb-error.logirbnb-acces>
-Restart=on-failure
-RestartSec=5
+
+ExecStart=/home/ubuntu/.local/bin/gunicorn --bind 0.0.0.0:5003 --workers 3 \
+--error-logfile /tmp/airbnb-error.log \
+--access-logfile /tmp/airbnb-access.log -m 007 web_dynamic.2-hbnb:app
 
 [Install]
 WantedBy=multi-user.target
-
-
-
-
-
-
-
-
-
